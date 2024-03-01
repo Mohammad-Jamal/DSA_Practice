@@ -64,9 +64,11 @@ int main()
   //? MY approach for this pattern
   for (row = 1; row <= n; row = row + 1)
   {
+    //? Space Print
     for (col = 1; col <= row - 1; col = col + 1)
       cout << "  ";
 
+    //? Star Print
     for (col = 1; col <= 2 * (n - row) + 1; col = col + 1)
       cout << "* ";
 
@@ -84,6 +86,168 @@ int main()
     for (col = 1; col <= 2 * row - 1; col = col + 1)
       cout << "*"
            << " ";
+
+    cout << endl;
+  }
+
+  //* Print
+  //* Enter the input :4
+  //*  * * * * * * * *
+  //*  * * *     * * *
+  //*  * *         * *
+  //*  *             *
+  //*  *             *
+  //*  * *         * *
+  //*  * * *     * * *
+  //*  * * * * * * * *
+
+  //? First Half
+  //*  * * * * * * * *
+  //*  * * *     * * *
+  //*  * *         * *
+  //*  *             *
+  for (row = n; row >= 1; row = row - 1)
+  {
+    //? Print star *
+    for (col = 1; col <= row; col = col + 1)
+      cout << "* ";
+
+    //? Space Print
+    for (col = 1; col <= 2 * n - 2 * row; col = col + 1)
+      cout << "  ";
+
+    //? Print star *
+    for (col = 1; col <= row; col = col + 1)
+      cout << "* ";
+
+    cout << endl;
+  }
+  //? Second half
+  //*  *             *
+  //*  * *         * *
+  //*  * * *     * * *
+  //*  * * * * * * * *
+  for (row = 1; row <= n; row = row + 1)
+  {
+    //? Print star *
+    for (col = 1; col <= row; col = col + 1)
+      cout << "* ";
+
+    //? Print Space
+    for (col = 1; col <= 2 * n - 2 * row; col = col + 1)
+      cout << "  ";
+
+    //? Print Star *
+    for (col = 1; col <= row; col = col + 1)
+      cout << "* ";
+
+    cout << endl;
+  }
+
+  //* Print
+  //* Enter the input :4
+  //*    *             *
+  //*    * *         * *
+  //*    * * *     * * *
+  //*    * * * * * * * *
+  //*    * * *     * * *
+  //*    * *         * *
+  //*    *             *
+
+  //? First Half
+
+  //*    *             *
+  //*    * *         * *
+  //*    * * *     * * *
+  //*    * * * * * * * *
+
+  for (row = 1; row <= n; row = row + 1)
+  {
+    //? Print star
+    for (col = 1; col <= row; col = col + 1)
+      cout << "* ";
+
+    //? Print space
+    for (col = 1; col <= 2 * n - 2 * row; col = col + 1)
+      cout << "  ";
+
+    //? Print star
+    for (col = 1; col <= row; col = col + 1)
+      cout << "* ";
+
+    cout << endl;
+  }
+
+  //? Second Half
+
+  //*    * * *     * * *
+  //*    * *         * *
+  //*    *             *
+
+  for (row = n - 1; row >= 1; row = row - 1)
+  {
+    //? Print star
+    for (col = 1; col <= row; col = col + 1)
+      cout << "* ";
+
+    //? Print Space
+    for (col = 1; col <= 2 * n - 2 * row; col = col + 1)
+      cout << "  ";
+
+    //? Print star
+    for (col = 1; col <= row; col = col + 1)
+      cout << "* ";
+
+    cout << endl;
+  }
+
+  //* Print
+  //* Enter the input :5
+  //*        *
+  //*       * *
+  //*      * * *
+  //*     * * * *
+  //*    * * * * *
+  //*    * * * * *
+  //*     * * * *
+  //*      * * *
+  //*       * *
+  //*        *
+
+  //? First Half
+  //*        *
+  //*       * *
+  //*      * * *
+  //*     * * * *
+  //*    * * * * *
+  for (row = 1; row <= n; row = row + 1)
+  {
+    //? Space print
+    for (col = 1; col <= n - row; col = col + 1)
+      cout << " ";
+
+    //? Print Star
+    for (col = 1; col <= row; col = col + 1)
+      cout << "* ";
+
+    cout << endl;
+  }
+
+  //? Second Half
+  //*    * * * * *
+  //*     * * * *
+  //*      * * *
+  //*       * *
+  //*        *
+  for (row = n; row >= 1; row = row - 1)
+  {
+    //? Space Print
+    for (col = n - row; col >= 1; col = col - 1)
+      cout << " ";
+
+    //? Print Star
+    for (col = row; col >= 1; col = col - 1)
+      cout << "* ";
 
     cout << endl;
   }
