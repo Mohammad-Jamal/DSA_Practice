@@ -48,4 +48,107 @@ int main()
 
     cout << endl;
   }
+
+  //* Third Pattern: Take an input n from the user, and create a pattern like below, for n=5, we have output like this.
+
+  //*            A
+  //*          A B A
+  //*        A B C B A
+  //*      A B C D C B A
+  //*    A B C D E D C B A
+
+  for (row = 1; row <= n; row = row + 1)
+  {
+    char current_name;
+    //? Space print
+    for (col = 1; col <= n - row; col = col + 1)
+      cout << "  ";
+
+    //? Print character
+    for (col = 1; col <= row; col = col + 1)
+    {
+      char name = 'A' + (col - 1);
+      cout << name << " ";
+      current_name = name;
+    }
+
+    for (col = 1; col <= row - 1; col = col + 1)
+    {
+      current_name = current_name - 1;
+      cout << current_name << " ";
+    }
+
+    cout << endl;
+  }
+
+  //* Fourth Pattern: Take an input n from the user, and create a pattern like below, for n=5, we have output like this.
+
+  //*           *
+  //*         *  *
+  //*       *  *  *
+  //*     *  *  *  *
+  //*   *  *  *  *  *
+  //*   *  *  *  *  *
+  //*    *  *  *  *
+  //*      *  *  *
+  //*       *  *
+  //*        *
+
+  //*  first half
+  //*           *
+  //*         *  *
+  //*       *  *  *
+  //*     *  *  *  *
+  //*   *  *  *  *  *
+  for (row = 1; row <= n; row = row + 1)
+  {
+    //? space print
+    for (col = 1; col <= n - row; col = col + 1)
+      cout << " ";
+
+    //? Star print
+    for (col = 1; col <= row; col = col + 1)
+      cout << "* ";
+
+    cout << endl;
+  } 
+
+  //? second half
+  //*   *  *  *  *  *
+  //*    *  *  *  *
+  //*      *  *  *
+  //*       *  *
+  //*        *
+
+  // for (row = n; row >= 1; row = row - 1)
+  // {
+  //   //? SPace print
+  //   for (col = n - row; col >= 1; col = col - 1)
+  //     cout << " ";
+
+  //   //? Star print
+  //   for (col = 1; col <= row; col = col + 1)
+  //     cout << "* ";
+
+  //   cout << endl;
+  // }
+
+  //? second half my approach
+  //*   *  *  *  *  *
+  //*    *  *  *  *
+  //*      *  *  *
+  //*       *  *
+  //*        *
+  for (row = 1; row <= n; row = row + 1)
+  {
+    //? SPace print
+    for (col = 1; col <= row - 1; col = col + 1)
+      cout << " ";
+
+    //? Star print
+    for (col = 1; col <= n - row + 1; col = col + 1)
+      cout << "* ";
+
+    cout << endl;
+  }
 }
