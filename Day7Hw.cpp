@@ -67,7 +67,7 @@ int main()
     //? Print character
     for (col = 1; col <= row; col = col + 1)
     {
-      char name = 'A' + (col - 1);
+      char name = 'A' + (col - 1); 
       cout << name << " ";
       current_name = name;
     }
