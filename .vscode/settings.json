@@ -1,4 +1,8 @@
 {
   "C_Cpp.default.compilerPath": "c:\\Users\\Mohammad Jamal\\Desktop\\C++\\Day2.cpp",
-  "C_Cpp.errorSquiggles": "enabled"
+  "C_Cpp.errorSquiggles": "enabled",
+  "files.associations": {
+    "*.cpp": "cpp",
+    "ostream": "cpp"
+  }
 }
