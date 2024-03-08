@@ -32,6 +32,24 @@ bool prime(int n)
   return 1;
 }
 
+//* pass by value
+// void swap(int a, int b)
+// {
+//   int c;
+//   c=a;
+//   a=b;
+//   b=c;
+// }
+
+//* pass  by reference
+void swap(int &a, int &b)
+{
+  int c;
+  c = a;
+  a = b;
+  b = c;
+}
+
 int fact(int n = 4) //? default parameter
 {
   int ans = 1;
@@ -73,4 +91,7 @@ int main()
   cout << b - a << " is " << prime(b - a) << endl;
   //? factorial of b-a
   cout << "Factorial of " << b - a << " is " << fact(b - a) << endl;
+
+  swap(a, b);
+  cout << a << " " << b << " " << endl;
 }
