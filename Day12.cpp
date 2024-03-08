@@ -1,95 +1,76 @@
 #include <iostream>
-#include <math.h>
 using namespace std;
 
-//* Write a function to return the capital letter alphabet of the corresponding entered small letter alphabet
-//? Rohit negi logic
-char convert(char name)
+int Sum(int x, int y) //? function declare
 {
-  char ans = name - 'a' + 'A';
+  int ans = x + y; //? this block is function define
   return ans;
 }
 
-//? my logic
-char convert(char name)
+int Mul(int x, int y) //? function declare
 {
-  name = name - 32;
-  return name;
+  int ans = x * y; //? this block is function define
+  return ans;
 }
 
-//* Armstrong
-int cout_digit(int n)
+void justPrint()
 {
-  int count = 0;
-  while (n)
-  {
-    count++;
-    n /= 10;
-  }
-  return count;
+  cout << "Hello Coder Army..\n";
 }
 
-bool Armstrong(int num, int digit)
+bool prime(int n)
 {
-  int n = num, ans = 0, rem;
-
-  while (n)
-  {
-    rem = n % 10;
-    n /= 10;
-    ans = ans + pow(rem, digit);
-  }
-  if (num == ans)
-    return 1;
-  else
+  if (n < 2)
     return 0;
-}
 
-//* Find the Trailing Zeroes in factorial
-void trailingZeroes(int N)
-{
-  int count = 0;
-  while (N >= 5)
+  for (int i = 2; i < n; i++)
   {
-    count += N / 5;
-    N /= 5;
+    if (n % i == 0)
+      return 0;
   }
 
-  cout << "Trailing Zeroes : " << count;
+  return 1;
+}
+
+int fact(int n = 4) //? default parameter
+{
+  int ans = 1;
+  for (int i = 1; i <= n; i++)
+    ans *= i;
+
+  return ans;
 }
 
 int main()
 {
+  int a, b;
+  cout << "Enter 2 numbers :";
+  cin >> a >> b;
 
-  //* Write a function to return the capital letter alphabet of the corresponding entered small letter alphabet
-  //* ex: input : a  output: A
-  //* ex: input : e  output: E
-  //* ex: input : f  output: F
-  char name;
-  cout << "Enter an alphabet :";
-  cin >> name;
+  //* write a function to add two numbers
+  cout << "Sum is " << Sum(a, b) << endl; //? function call
+  // you can write like this
+  // int result = Sum(a,b);
+  // cout<<result;
 
-  cout << convert(name);
-  //?
+  //* write a function to multiply two numbers
+  cout << "Multiplication is " << Mul(a, b) << endl; //? function call
 
-  //* Write a function to check if the number is Armstrong or Not
-  //* ex: 153 (no.of digits in 153 = 3)
-  //* 1^3 + 5^3 + 3^3
-  //* 3   +  125 + 27
-  //* 153 == 153 => is Armstrong
+  //* write a function without returning anything and just print on console
+  justPrint();
 
-  int num;
-  cout << "Enter a number : ";
-  cin >> num;
+  //* Wite a function to print prime number or not
 
-  //? first count digits in number
-  int digit = cout_digit(num);
-  //? check Armstrong or not
-  cout << Armstrong(num, digit);
-
-  //* Find the Trailing Zeroes in factorial
-  int num;
-  cout << "Enter a number :";
-  cin >> num;
-  trailingZeroes(num);
+  //? a is prime or not
+  cout << a << " is " << prime(a) << endl;
+  //? factorial of a
+  cout << "Factorial of " << a << " is " << fact(a) << endl;
+  //? b is prime or not
+  cout << b << " is " << prime(b) << endl;
+  //? factorial of b
+  cout << "Factorial of " << b << " is " << fact(b) << endl;
+  //? b-a is prime or not
+  cout << b - a << " is " << prime(b - a) << endl;
+  //? factorial of b-a
+  cout << "Factorial of " << b - a << " is " << fact(b - a) << endl;
 }
