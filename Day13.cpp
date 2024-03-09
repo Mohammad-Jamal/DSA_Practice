@@ -11,11 +11,11 @@ char convert(char name)
 }
 
 //? my logic
-char convert(char name)
-{
-  name = name - 32;
-  return name;
-}
+// char convert(char name)
+// {
+//   name = name - 32;
+//   return name;
+// }
 
 //* Armstrong
 int cout_digit(int n)
@@ -58,6 +58,35 @@ void trailingZeroes(int N)
   cout << "Trailing Zeroes : " << count;
 }
 
+//* write a function to check Rectangle or not
+bool isRectangle(int a, int b, int c, int d)
+{
+  if ((a == b && c == d) || (a == d && b == c) || (a == c && b == d))
+    return 1;
+  else
+    return 0;
+  //? if you want write more efficiently in single line then write like this
+  return ((a == b && c == d) || (a == d && b == c) || (a == c && b == d));
+}
+
+//* Total Bishop move
+int totalMoves(int A, int B)
+{
+  int count = 0;
+  count += min(8 - A, 8 - B);
+  count += min(8 - A, B - 1);
+  count += min(A - 1, B - 1);
+  count += min(A - 1, 8 - B);
+
+  return count;
+}
+
+//* canWinNim
+bool canWinNim(int N)
+{
+  return N % 4 != 0;
+}
+
 int main()
 {
 
@@ -92,4 +121,23 @@ int main()
   cout << "Enter a number :";
   cin >> num;
   trailingZeroes(num);
+
+  //* write a function to check Rectangle or not
+  int a, b, c, d;
+  cout << "Enter 4 values :";
+  cin >> a >> b >> c >> d;
+
+  bool result = isRectangle(a, b, c, d);
+  cout << result;
+
+  //* Total Bishop moves
+  int A, B;
+  cin >> A >> B;
+  cout << totalMoves(A, B);
+
+  //* canWinNim
+  int n;
+  cout << "Choose a number :";
+  cin >> n;
+  cout << canWinNim(n);
 }
