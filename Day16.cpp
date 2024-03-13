@@ -1,39 +1,57 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-
-
+  //* SELECTION SORT
 int main()
 {
+  //* SELECTION SORT
+  // TODO Sorting the array elements in Ascending order
   int arr[1000];
   int index;
-  int n;  
-  cout<<"Enter the Size of array :";
-  cin>>n;  //? size of array
+  int n;
+  cout << "Enter the Size of array :";
+  cin >> n; //? size of array
 
-  cout<<"Enter array elements :";
-  for (int i=0;i<n;i++)
-  cin>>arr[i];
+  cout << "Enter array elements :";
+  for (int i = 0; i < n; i++)
+    cin >> arr[i];
 
-  for (int i=0;i<n-1;i++)
+  for (int i = 0; i < n - 1; i++)
   {
     index = i;
-    for (int j=i+1;j<n;j++)
+    for (int j = i + 1; j < n; j++)
     {
       if (arr[j] < arr[index])
-      index = j;
+        index = j;
     }
 
-    swap(arr[i],arr[index]);
-
+    swap(arr[i], arr[index]);
   }
 
-  //? print sorted array 
-  for (int i=0;i<n;i++)
-  cout<<arr[i]<<" ";
+  //? print sorted array
+  for (int i = 0; i < n; i++)
+    cout << arr[i] << " ";
 
-  //todo space complexity 
-  //todo Auxiliary : O(1)
-  //todo Total Space Complexity : 1 + n = O(n)
-  //todo Time Complexity : O(n square)
+  // todo space complexity
+  // todo Auxiliary : O(1)
+  // todo Total Space Complexity : 1 + n = O(n)
+  // todo Time Complexity : O(n square)
 
+  // TODO Sorting the array elements in descending order
+  int arr[6] = {10, 11, 1, 2, 8, 4};
+  int n = 6;
+  int index;
+  for (int i = 0; i < n - 1; i++)
+  {
+    index = i;
+    for (int j = i + 1; j < n; j++)
+    {
+      if (arr[j] > arr[index])
+        index = j;
+    }
+
+    swap(arr[i], arr[index]);
+  }
+
+  for (int i = 0; i < n; i++)
+    cout << arr[i] << " ";
 }
