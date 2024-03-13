@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-  //* SELECTION SORT
+//* SELECTION SORT
 int main()
 {
   //* SELECTION SORT
@@ -49,6 +49,32 @@ int main()
         index = j;
     }
 
+    swap(arr[i], arr[index]);
+  }
+
+  for (int i = 0; i < n; i++)
+    cout << arr[i] << " ";
+
+
+  //todo Sorting the alphabets
+  char arr[1000];
+  int n;
+  int index;
+  cout << "Enter the size of array :";
+  cin >> n;
+
+  cout << "Enter the alphabets : ";
+  for (int i = 0; i < n; i++)
+    cin >> arr[i];
+
+  for (int i = 0; i < n - 1; i++)
+  {
+    index = i;
+    for (int j = i + 1; j < n; j++)
+    {
+      if (arr[j] < arr[index])
+        index = j;
+    }
     swap(arr[i], arr[index]);
   }
 
