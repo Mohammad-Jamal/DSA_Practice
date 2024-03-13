@@ -31,10 +31,10 @@ int main()
   for (int i = 0; i < n; i++)
     cout << arr[i] << " ";
 
-  // todo space complexity
-  // todo Auxiliary : O(1)
-  // todo Total Space Complexity : 1 + n = O(n)
-  // todo Time Complexity : O(n square)
+  //! space complexity
+  //! Auxiliary : O(1)
+  //! Total Space Complexity : 1 + n = O(n)
+  //! Time Complexity : O(n square)
 
   // TODO Sorting the array elements in descending order
   int arr[6] = {10, 11, 1, 2, 8, 4};
