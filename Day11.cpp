@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
 
-  //* Bitwise compliment
+  //* Bitwise Compliment
   int n, rem, rev = 0;
   cout << "Enter a number : ";
   cin >> n;
