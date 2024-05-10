@@ -2,7 +2,7 @@
 using namespace std;
 
 
-//todo 2D ARRAY
+//todo 2D ARRAY (MATRIX)
 
 void printCol(int arr[][4], int row, int col)
 {
@@ -10,6 +10,67 @@ void printCol(int arr[][4], int row, int col)
   for (int j = 0; j < col; j++)
     for (int i = 0; i < row; i++)
       cout << arr[i][j] << " ";
+}
+
+void printRowMax(int arr[][4], int row, int col)
+{
+  int sum = INT_MIN,index = -1;
+
+  for(int i = 0;i<row;i++)
+  {
+    int total = 0;
+    for (int j=0;j<col;j++)
+    total += arr[i][j];
+
+    if (total > sum)
+    {
+      sum = total;
+      index = i;
+    }
+  }
+
+  cout<<index;
+}
+
+void printSumDiagonals(int matrix[][3], int row, int col)
+{
+  //todo First Diagonal sum
+  int first_diag = 0;
+  // for (int i = 0;i<row;i++)
+  // first_diag += matrix[i][i];
+  //* OR 
+  int i = 0;
+  while(i<row)
+  {
+    first_diag += matrix[i][i];
+    i++;
+  }
+
+  //todo Second Diagonal sum
+  int second_diag = 0;
+  i = 0;
+  int j = col - 1;
+  while(j >= 0)
+  {
+    second_diag += matrix[i][j];
+    i++,j--;
+  }
+
+  cout<<"First Diagonal sum : "<<first_diag<<endl<<"Second Diagonal sum : "<<second_diag;
+}
+
+void revRowMatrix(int arr[][4],int row, int col)
+{
+  for (int i = 0;i<row;i++)
+  {
+    //? Reverse iTH Row
+    int start = 0,end = col - 1;
+    while (start < end)
+    {
+      swap(arr[i][start], arr[i][end]);
+      start++,end--;
+    }
+  }
 }
 
 int main()
@@ -57,5 +118,23 @@ int main()
   for (int i = 0;i<3;i++)
   for (int j = 0;j<4;j++)
   cout<<ans[i][j]<<" ";
+
+  //todo Print Row index with maximum sum
+  int arr[3][4] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+  printRowMax(arr , 3 ,4);
+
+  //todo Print first and second diagonal sum of a matrix
+  int matrix[3][3] = {1,2,3,4,5,6,7,8,9};
+
+  printSumDiagonals(matrix ,3 ,3);
+
+  //todo Reverse Each row of Matrix
+
+  int arr[3][4] = {5,4,3,0,1,2,3,8,4,9,3,2};
+  revRowMatrix(arr, 3, 4);
+
+  for (int i = 0;i<3;i++)
+  for (int j = 0;j<4;j++)
+  cout<<arr[i][j]<<" ";
 
 }
