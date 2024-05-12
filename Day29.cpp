@@ -116,14 +116,14 @@ int main()
   cout << endl;
 
   //* Upper diagonal way - same solution
-  // for (int i = 0; i < 4; i++)
+  // for (int i = 0; i < 4 - 1; i++)
   // {
   //   for (int j = i + 1; j < 4; j++)
   //     swap(arr[i][j], arr[j][i]);
   // }
 
   //* Lower diagonal way - same solution
-  for (int i = 1; i < 4; i++)
+  for (int i = 1; i < 4 ; i++)
   {
     for (int j = 0; j < i; j++)
       swap(arr[i][j], arr[j][i]);
