@@ -37,7 +37,7 @@ void printSpiralForm(int matrix[][6], int row, int col)
       cout << matrix[i][right] << " ";
     right--;
     //? Print Bottom
-    if (top < <= bottom)
+    if (top <= bottom)
     {
       for (int i = right; i >= left; i--)
         cout << matrix[bottom][i];
@@ -55,7 +55,7 @@ void printSpiralForm(int matrix[][6], int row, int col)
 
 int main()
 {
-  //* Create 2d Vector
+  // //* Create 2d Vector
   // ? syntax : vector< vector<int> > vector_name (rows, vector<int> (cols,initialize(optional)));
   vector<vector<int>> matrix(3, vector<int>(4, 1));
 
@@ -82,7 +82,7 @@ int main()
   cin >> cols;
   cout << endl;
 
-  vector<vector<int>> matrix2(rows, vector<int>(cols,1));
+  vector<vector<int>> matrix2(rows, vector<int>(cols, 1));
   cout << "Enter the matrix values : " << endl;
   for (int i = 0; i < rows; i++)
     for (int j = 0; j < cols; j++)
@@ -103,4 +103,37 @@ int main()
 
   // todo SPIRAL MATRIX PROBLEM
   printSpiralForm(arr, 6, 6);
+
+  // todo Transpose of a Matrix
+  int arr[4][4] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
+  cout << "Before Swapping : " << endl;
+  for (int i = 0; i < 4; i++)
+  {
+    for (int j = 0; j < 4; j++)
+      cout << arr[i][j] << "   ";
+    cout << endl;
+  }
+  cout << endl;
+
+  //* Upper diagonal way - same solution
+  // for (int i = 0; i < 4; i++)
+  // {
+  //   for (int j = i + 1; j < 4; j++)
+  //     swap(arr[i][j], arr[j][i]);
+  // }
+
+  //* Lower diagonal way - same solution
+  for (int i = 1; i < 4; i++)
+  {
+    for (int j = 0; j < i; j++)
+      swap(arr[i][j], arr[j][i]);
+  }
+
+  cout << "After Swapping : " << endl;
+  for (int i = 0; i < 4; i++)
+  {
+    for (int j = 0; j < 4; j++)
+      cout << arr[i][j] << "   ";
+    cout << endl;
+  }
 }
